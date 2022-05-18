@@ -5,7 +5,7 @@ import os
 from itertools import chain
 
 import numpy as np
-import tensorboardX
+from torch.utils import tensorboard as tensorboardX
 import torch
 import torch.nn.functional as F
 import torch.distributions as pyd

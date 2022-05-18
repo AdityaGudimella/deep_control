@@ -17,7 +17,7 @@ warnings.filterwarnings(
     category=UserWarning,
 )
 
-import tensorboardX
+from torch.utils import tensorboard as tensorboardX
 import tqdm
 import torch
 from torch import multiprocessing as mp

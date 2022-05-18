@@ -6,7 +6,7 @@ from itertools import chain
 import random
 
 import numpy as np
-import tensorboardX
+from torch.utils import tensorboard as tensorboardX
 import torch
 import torch.nn.functional as F
 import tqdm
@@ -156,7 +156,6 @@ def redq(
     if log_to_disk:
         # create tb writer, save hparams
         writer = tensorboardX.SummaryWriter(save_dir)
-        writer.add_hparams(locals(), {})
 
     ###########
     ## SETUP ##

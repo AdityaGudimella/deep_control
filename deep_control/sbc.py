@@ -4,7 +4,7 @@ from itertools import chain
 import random
 
 import numpy as np
-import tensorboardX
+from torch.utils import tensorboard as tensorboardX
 import torch
 import tqdm
 

@@ -17,7 +17,7 @@ warnings.filterwarnings(
     category=UserWarning,
 )
 
-from torch.utils import tensorboard as tensorboardX
+from torch.utils.tensorboard import SummaryWriter
 import tqdm
 import torch
 from torch import multiprocessing as mp
@@ -545,7 +545,7 @@ def aac(
     act_space = test_env.action_space
 
     save_dir = dc.utils.make_process_dirs(name)
-    writer = tensorboardX.SummaryWriter(save_dir)
+    writer = SummaryWriter(save_dir)
     writer.add_hparams(locals(), {})
 
     # Lambda funcs related to genetic crossover

@@ -6,7 +6,7 @@ from itertools import chain
 import random
 
 import numpy as np
-from torch.utils import tensorboard as tensorboardX
+from torch.utils.tensorboard import SummaryWriter
 import torch
 import torch.nn.functional as F
 import tqdm
@@ -212,8 +212,7 @@ def sunrise(
     if save_to_disk or log_to_disk:
         save_dir = utils.make_process_dirs(name)
     if log_to_disk:
-        writer = tensorboardX.SummaryWriter(save_dir)
-        writer.add_hparams(locals(), {})
+        writer = SummaryWriter(save_dir)
 
     ###########
     ## SETUP ##

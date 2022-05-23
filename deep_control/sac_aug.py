@@ -6,7 +6,7 @@ from itertools import chain
 
 import gym
 import numpy as np
-from torch.utils import tensorboard as tensorboardX
+from torch.utils.tensorboard import SummaryWriter
 import torch
 import torch.nn.functional as F
 import tqdm
@@ -119,7 +119,7 @@ def sac_aug(
         save_dir = utils.make_process_dirs(name)
     # create tb writer, save hparams
     if log_to_disk:
-        writer = tensorboardX.SummaryWriter(save_dir)
+        writer = SummaryWriter(save_dir)
         writer.add_hparams(locals(), {})
 
     agent.to(device)

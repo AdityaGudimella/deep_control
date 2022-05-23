@@ -4,7 +4,7 @@ from itertools import chain
 import random
 
 import numpy as np
-from torch.utils import tensorboard as tensorboardX
+from torch.utils.tensorboard import SummaryWriter
 import torch
 import tqdm
 
@@ -115,7 +115,7 @@ def sbc(
     if save_to_disk or log_to_disk:
         save_dir = utils.make_process_dirs(name)
     if log_to_disk:
-        writer = tensorboardX.SummaryWriter(save_dir)
+        writer = SummaryWriter(save_dir)
         writer.add_hparams(locals(), {})
 
     ###########

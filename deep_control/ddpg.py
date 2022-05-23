@@ -3,7 +3,7 @@ import copy
 import os
 
 import numpy as np
-from torch.utils import tensorboard as tensorboardX
+from torch.utils.tensorboard import SummaryWriter
 import torch
 import torch.nn.functional as F
 import tqdm
@@ -112,7 +112,7 @@ def ddpg(
         save_dir = utils.make_process_dirs(name)
     if log_to_disk:
         # create tb writer, save hparams
-        writer = tensorboardX.SummaryWriter(save_dir)
+        writer = SummaryWriter(save_dir)
         writer.add_hparams(locals(), {})
 
     agent.to(device)

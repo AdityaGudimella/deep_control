@@ -5,7 +5,7 @@ import os
 from itertools import chain
 
 import numpy as np
-from torch.utils import tensorboard as tensorboardX
+from torch.utils.tensorboard import SummaryWriter
 import torch
 import torch.nn.functional as F
 import tqdm
@@ -179,7 +179,7 @@ def discor(
     if save_to_disk or log_to_disk:
         save_dir = utils.make_process_dirs(name)
     if log_to_disk:
-        writer = tensorboardX.SummaryWriter(save_dir)
+        writer = SummaryWriter(save_dir)
         writer.add_hparams(locals(), {})
 
     ###########

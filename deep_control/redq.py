@@ -155,12 +155,8 @@ def redq(
         save_dir = utils.make_process_dirs(name)
     if log_to_disk:
         # create tb writer, save hparams
-<<<<<<< Updated upstream
-        writer = tensorboardX.SummaryWriter(save_dir)
-=======
         writer = SummaryWriter(save_dir)
         writer.add_hparams(locals(), {})
->>>>>>> Stashed changes
 
     ###########
     ## SETUP ##
